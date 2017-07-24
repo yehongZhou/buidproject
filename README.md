@@ -92,7 +92,8 @@ PROJECT_NAME='SoloVideo'
 BUILD_PATH='./build/'
 
 #使用fastlane
-#fastlane gym 
+:<< '
+fastlane gym 
 --workspace ${PROJECT_NAME}'.xcworkspace' 
 --scheme ${PROJECT_NAME}  
 --export_method 'development' 
@@ -101,9 +102,11 @@ BUILD_PATH='./build/'
 --archive_path ${BUILD_PATH} 
 --configuration 'Debug' 
 --clean true
+'
 
 #fastlane简写语法
-#fastlane gym 
+:<< '
+fastlane gym 
 -w ${PROJECT_NAME}'.xcworkspace' 
 -s ${PROJECT_NAME}  
 -j 'development' 
@@ -112,6 +115,7 @@ BUILD_PATH='./build/'
 -b ${BUILD_PATH} 
 -q 'Debug' 
 -c true
+'
 
 #使用xcodebuild
 xcodebuild archive 
@@ -150,7 +154,8 @@ BUILD_PATH='./build/'
 pod update --no-repo-update
 
 #使用fastlane 打包
-#fastlane gym 
+:<< '
+fastlane gym 
 --workspace ${PROJECT_NAME}'.xcworkspace' 
 --scheme ${PROJECT_NAME}  
 --export_method 'development' 
@@ -159,9 +164,11 @@ pod update --no-repo-update
 --archive_path ${BUILD_PATH} 
 --configuration 'Debug' 
 --clean true
+'
 
 #fastlane简写语法
-#fastlane gym 
+:<< '
+fastlane gym 
 -w ${PROJECT_NAME}'.xcworkspace' 
 -s ${PROJECT_NAME}  
 -j 'development' 
@@ -170,6 +177,7 @@ pod update --no-repo-update
 -b ${BUILD_PATH} 
 -q 'Debug' 
 -c true
+'
 
 #使用xcodebuild 打包
 xcodebuild archive 
