@@ -1,5 +1,7 @@
 [TOC]
+
 ###常用打包脚本
+
 #### xcodebuild
 
 ```
@@ -29,6 +31,7 @@ exportOptions.plist的内容
 ```
 
 ####fastlane
+
  安装
 ```
 brew cask install fastlane
