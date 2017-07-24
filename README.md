@@ -4,7 +4,7 @@
 
 #### xcodebuild
 
-```ruby
+```shell
 #打包为xcarchive
 xcodebuild archive 
 -workspace ${YourWorkspace.xcworkspace} 
@@ -19,7 +19,7 @@ xcodebuild -exportArchive
 -exportOptionsPlist 'exportOptions.plist'
 ```
 exportOptions.plist的内容
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -33,14 +33,14 @@ exportOptions.plist的内容
 #### fastlane
 
  安装
-```
+```shell
 brew cask install fastlane
 或者
 sudo gem install fastlane -n /usr/local/bin
 ```
 
 打包
-```
+```shell
 #打包并导出为IPA
 fastlane gym 
 --workspace ${YourWorkspace.xcworkspace} 
@@ -56,12 +56,12 @@ fastlane gym
 #### xctool
 
 安装
-```
+```shell
 brew install xctool
 ```
 
  打包
-```
+```shell
 #清理
 xctool clean 
 -workspace YourWorkspace.xcworkspace 
@@ -79,13 +79,13 @@ xctool build
 ```
 ### 快速使用
 #### aggregate
-```
+```shell
 1、新建target->cross-platform->aggregate
 2、Build Phases->New Run Script Phase
 ```
 Shell 内容
 
-```
+```shell
 export LANG=en_US.UTF-8
 
 PROJECT_NAME='SoloVideo'
