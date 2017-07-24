@@ -4,7 +4,7 @@
 
 #### xcodebuild
 
-```
+```ruby
 #打包为xcarchive
 xcodebuild archive 
 -workspace ${YourWorkspace.xcworkspace} 
