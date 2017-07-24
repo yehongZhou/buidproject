@@ -99,8 +99,19 @@ BUILD_PATH='./build/'
 --output_name ${PROJECT_NAME}'.ipa' 
 --output_directory ${BUILD_PATH} 
 --archive_path ${BUILD_PATH} 
---configuration 'DEBUG' 
+--configuration 'Debug' 
 --clean true
+
+#fastlane简写语法
+#fastlane gym 
+-w ${PROJECT_NAME}'.xcworkspace' 
+-s ${PROJECT_NAME}  
+-j 'development' 
+-n ${PROJECT_NAME}'.ipa' 
+-o ${BUILD_PATH} 
+-b ${BUILD_PATH} 
+-q 'Debug' 
+-c true
 
 #使用xcodebuild
 xcodebuild archive 
@@ -129,7 +140,7 @@ View->Navigators->Show Report Navigator
 ```
 Shell 内容
 
-```
+```shell
 export LANG=en_US.UTF-8
 
 PROJECT_NAME='SoloVideo'
@@ -146,8 +157,19 @@ pod update --no-repo-update
 --output_name ${PROJECT_NAME}'.ipa' 
 --output_directory ${BUILD_PATH} 
 --archive_path ${BUILD_PATH} 
---configuration 'DEBUG' 
+--configuration 'Debug' 
 --clean true
+
+#fastlane简写语法
+#fastlane gym 
+-w ${PROJECT_NAME}'.xcworkspace' 
+-s ${PROJECT_NAME}  
+-j 'development' 
+-n ${PROJECT_NAME}'.ipa' 
+-o ${BUILD_PATH} 
+-b ${BUILD_PATH} 
+-q 'Debug' 
+-c true
 
 #使用xcodebuild 打包
 xcodebuild archive 
