@@ -4,10 +4,17 @@
 
 ```
 #打包为xcarchive
-xcodebuild archive -workspace ${YourWorkspace.xcworkspace} -scheme ${YourScheme} -configuration Release -archivePath ${xcarchive path}
+xcodebuild archive 
+-workspace ${YourWorkspace.xcworkspace} 
+-scheme ${YourScheme} 
+-configuration Release 
+-archivePath ${xcarchive path}
 
 #导出IPA
-xcodebuild -exportArchive -archivePath ${xcarchive path}'.xcarchive' -exportPath ${exportPath} -exportOptionsPlist 'exportOptions.plist'
+xcodebuild -exportArchive 
+-archivePath ${xcarchive path}'.xcarchive' 
+-exportPath ${exportPath} 
+-exportOptionsPlist 'exportOptions.plist'
 ```
 exportOptions.plist的内容
 ```
@@ -32,7 +39,15 @@ sudo gem install fastlane -n /usr/local/bin
 打包
 ```
 #打包并导出为IPA
-fastlane gym --workspace ${YourWorkspace.xcworkspace}'' --scheme ${YourScheme}  --export_method 'development' --output_name ${PROJECT_NAME}'.ipa' --output_directory ${BUILD_PATH} --archive_path ${BUILD_PATH} --configuration 'Release' --clean true
+fastlane gym 
+--workspace ${YourWorkspace.xcworkspace} 
+--scheme ${YourScheme}  
+--export_method 'development' 
+--output_name ${PROJECT_NAME}'.ipa' 
+--output_directory ${BUILD_PATH} 
+--archive_path ${BUILD_PATH} 
+--configuration 'Release' 
+--clean true
 ```
 
 #### xctool
@@ -45,10 +60,17 @@ brew install xctool
  打包
 ```
 #清理
-xctool clean -workspace YourWorkspace.xcworkspace -scheme YourScheme -configuration 'Release'
+xctool clean 
+-workspace YourWorkspace.xcworkspace 
+-scheme YourScheme 
+-configuration 'Release'
 
 #打包为xcarchive
-xctool build -workspace YourWorkspace.xcworkspace -scheme YourScheme -configuration 'Release' archive -archivePath ${archive_path}
+xctool build 
+-workspace YourWorkspace.xcworkspace 
+-scheme YourScheme 
+-configuration 'Release' archive 
+-archivePath ${archive_path}
 
 #导出用xcodebuild
 ```
@@ -67,19 +89,34 @@ PROJECT_NAME='SoloVideo'
 BUILD_PATH='./build/'
 
 #使用fastlane
-#fastlane gym --workspace ${PROJECT_NAME}'.xcworkspace' --scheme ${PROJECT_NAME}  --export_method 'development' --output_name ${PROJECT_NAME}'.ipa' --output_directory ${BUILD_PATH} --archive_path ${BUILD_PATH} --configuration 'DEBUG' --clean true
+#fastlane gym 
+--workspace ${PROJECT_NAME}'.xcworkspace' 
+--scheme ${PROJECT_NAME}  
+--export_method 'development' 
+--output_name ${PROJECT_NAME}'.ipa' 
+--output_directory ${BUILD_PATH} 
+--archive_path ${BUILD_PATH} 
+--configuration 'DEBUG' 
+--clean true
 
 #使用xcodebuild
-xcodebuild archive -workspace ${PROJECT_NAME}'.xcworkspace' -scheme ${PROJECT_NAME} -configuration Release -archivePath ${BUILD_PATH}${PROJECT_NAME}
+xcodebuild archive 
+-workspace ${PROJECT_NAME}'.xcworkspace' 
+-scheme ${PROJECT_NAME} 
+-configuration Release 
+-archivePath ${BUILD_PATH}${PROJECT_NAME}
 
-xcodebuild -exportArchive -archivePath ${BUILD_PATH}${PROJECT_NAME}'.xcarchive' -exportPath ${BUILD_PATH} -exportOptionsPlist 'exportOptions.plist'
+xcodebuild -exportArchive 
+-archivePath ${BUILD_PATH}${PROJECT_NAME}'.xcarchive' 
+-exportPath ${BUILD_PATH} 
+-exportOptionsPlist 'exportOptions.plist'
 
 #上传蒲公英
 #curl -F "file=@${BUILD_PATH}${PROJECT_NAME}.ipa" -F "uKey=${YourKey}" -F "_api_key=${YourApiKey}" https://qiniu-storage.pgyer.com/apiv1/app/upload
 
 ```
 
-如果要查看aggregate执行的日志
+查看aggregate执行的日志
 ```
 View->Navigators->Show Report Navigator
 ```
@@ -99,12 +136,27 @@ BUILD_PATH='./build/'
 pod update --no-repo-update
 
 #使用fastlane 打包
-#fastlane gym --workspace ${PROJECT_NAME}'.xcworkspace' --scheme ${PROJECT_NAME}  --export_method 'development' --output_name ${PROJECT_NAME}'.ipa' --output_directory ${BUILD_PATH} --archive_path ${BUILD_PATH} --configuration 'DEBUG' --clean true
+#fastlane gym 
+--workspace ${PROJECT_NAME}'.xcworkspace' 
+--scheme ${PROJECT_NAME}  
+--export_method 'development' 
+--output_name ${PROJECT_NAME}'.ipa' 
+--output_directory ${BUILD_PATH} 
+--archive_path ${BUILD_PATH} 
+--configuration 'DEBUG' 
+--clean true
 
 #使用xcodebuild 打包
-xcodebuild archive -workspace ${PROJECT_NAME}'.xcworkspace' -scheme ${PROJECT_NAME} -configuration Release -archivePath ${BUILD_PATH}${PROJECT_NAME}
+xcodebuild archive 
+-workspace ${PROJECT_NAME}'.xcworkspace' 
+-scheme ${PROJECT_NAME} 
+-configuration Release 
+-archivePath ${BUILD_PATH}${PROJECT_NAME}
 
-xcodebuild -exportArchive -archivePath ${BUILD_PATH}${PROJECT_NAME}'.xcarchive' -exportPath ${BUILD_PATH} -exportOptionsPlist 'exportOptions.plist'
+xcodebuild -exportArchive 
+-archivePath ${BUILD_PATH}${PROJECT_NAME}'.xcarchive' 
+-exportPath ${BUILD_PATH} 
+-exportOptionsPlist 'exportOptions.plist'
 
 #上传蒲公英
 #curl -F "file=@${BUILD_PATH}${PROJECT_NAME}.ipa" -F "uKey=${YourKey}" -F "_api_key=${YourApiKey}" https://qiniu-storage.pgyer.com/apiv1/app/upload
