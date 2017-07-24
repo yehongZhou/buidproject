@@ -167,7 +167,7 @@ fastlane gym
 '
 
 #fastlane简写语法
-:<< '
+:<< 'BLOCK
 fastlane gym 
 -w ${PROJECT_NAME}'.xcworkspace' 
 -s ${PROJECT_NAME}  
@@ -177,7 +177,7 @@ fastlane gym
 -b ${BUILD_PATH} 
 -q 'Debug' 
 -c true
-'
+BLOCK'
 
 #使用xcodebuild 打包
 xcodebuild archive 
