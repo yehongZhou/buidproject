@@ -1,6 +1,6 @@
 [TOC]
 
-###常用打包脚本
+### 常用打包脚本 
 
 #### xcodebuild
 
@@ -30,7 +30,7 @@ exportOptions.plist的内容
 </plist>
 ```
 
-####fastlane
+#### fastlane
 
  安装
 ```
@@ -77,8 +77,8 @@ xctool build
 
 #导出用xcodebuild
 ```
-###快速使用
-####aggregate
+### 快速使用
+#### aggregate
 ```
 1、新建target->cross-platform->aggregate
 2、Build Phases->New Run Script Phase
@@ -123,7 +123,7 @@ xcodebuild -exportArchive
 ```
 View->Navigators->Show Report Navigator
 ```
-####shell
+#### shell
 ```
 项目目录下新建Pgyer.sh
 ```
